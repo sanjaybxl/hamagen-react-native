@@ -69,7 +69,7 @@ const ExposuresDetected = (
   return (
     <FadeInView style={styles.container}>
       <View style={{ alignItems: 'center' }}>
-        <Icon source={require('../../assets/main/exposures.png')} width={99} height={59} customStyles={{ marginBottom: 12 }} />
+        <Icon source={require('../../assets/main/exposures.png')} width={120} height={90} customStyles={{ marginBottom: 12 }} />
         <Text style={styles.title} bold>{`${found} ${exposures.length} ${exposureEvents}`}</Text>
       </View>
 

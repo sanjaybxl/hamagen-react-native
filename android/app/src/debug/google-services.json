@@ -1,42 +1,95 @@
 {
   "project_info": {
-    "project_number": "776051238571",
-    "firebase_url": "https://hamagen-aa88d.firebaseio.com",
-    "project_id": "hamagen-aa88d",
-    "storage_bucket": "hamagen-aa88d.appspot.com"
+    "project_number": "632355807364",
+    "firebase_url": "https://shield-354b2.firebaseio.com",
+    "project_id": "shield-354b2",
+    "storage_bucket": "shield-354b2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:776051238571:android:27428629073a56ce4af9ee",
+        "mobilesdk_app_id": "1:632355807364:android:d6b72bba395262f5ce22d1",
         "android_client_info": {
-          "package_name": "com.hamagen.dev"
+          "package_name": "com.ino.covid"
         }
       },
       "oauth_client": [
         {
-          "client_id": "776051238571-b87qk083ctbon3oib5lam95qg26inr4g.apps.googleusercontent.com",
+          "client_id": "632355807364-hof3hk14q4ions5au4034lif60tts2gu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.hamagen.dev",
-            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+            "package_name": "com.ino.covid",
+            "certificate_hash": "1e2ba5b1a964fdec395138ece56d435679cc2060"
           }
         },
         {
-          "client_id": "776051238571-h98i1874433nq1tbm5p7acfjoptj74eo.apps.googleusercontent.com",
+          "client_id": "632355807364-uqh0av4192e22brv2me16tice24npl4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ino.covid",
+            "certificate_hash": "7386f5f91e0187f04c9f52ce82b5c272ce20c27f"
+          }
+        },
+        {
+          "client_id": "632355807364-dndh82o7fbilcfl413p0jnueidn87irc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBTUXVwo9ouIiPFNXBdz9o4D1KJq7Es1qg"
+          "current_key": "AIzaSyAYpMa-GdGxGjUECQHuYenYoqeDflgUdz0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "776051238571-h98i1874433nq1tbm5p7acfjoptj74eo.apps.googleusercontent.com",
+              "client_id": "632355807364-dndh82o7fbilcfl413p0jnueidn87irc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632355807364:android:5b6aef8ebb3c48d0ce22d1",
+        "android_client_info": {
+          "package_name": "com.ino.covid.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632355807364-mcpbriuj6t8abt5gmrqoh5mqj72q1svi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ino.covid.dev",
+            "certificate_hash": "7386f5f91e0187f04c9f52ce82b5c272ce20c27f"
+          }
+        },
+        {
+          "client_id": "632355807364-ndbqoorfnb9l39vs4qjdgv7douo5c690.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ino.covid.dev",
+            "certificate_hash": "1e2ba5b1a964fdec395138ece56d435679cc2060"
+          }
+        },
+        {
+          "client_id": "632355807364-dndh82o7fbilcfl413p0jnueidn87irc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYpMa-GdGxGjUECQHuYenYoqeDflgUdz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632355807364-dndh82o7fbilcfl413p0jnueidn87irc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

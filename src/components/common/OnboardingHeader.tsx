@@ -11,7 +11,7 @@ const OnboardingHeader = ({ hideLogo }: Props) => {
   return (
     <View style={[styles.container, { top: hideLogo ? 20 : 10 }]}>
       <ChangeLanguageButton />
-      {!hideLogo && <Icon source={require('../../assets/onboarding/logo.png')} width={40} />}
+      {!hideLogo && <Icon source={require('../../assets/onboarding/indiaMinistryOfHealthLogo.png')} width={40} />}
     </View>
   );
 };

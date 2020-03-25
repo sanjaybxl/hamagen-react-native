@@ -113,6 +113,60 @@ export const checkSickPeople = async () => {
   fetch(_URL, {headers: {'Content-Type': 'application/json;charset=utf-8'}})
     .then(response => response.json())
     .then(async responseJson => {
+
+      responseJson = {
+        "type": "FeatureCollection",
+        "features": [
+          {
+
+            "type": "Feature",
+            "id": 7035,
+            "geometry":
+            {
+              "type": "Point",
+              "coordinates": [
+                76.6407304, 12.3235299
+              ]
+            },
+            "properties": {
+              "OBJECTID": 7035,
+              "Name": "",
+              "Place": "OFFICE",
+              "Comments": "",
+              "POINT_X": null,
+              "POINT_Y": null,
+              "fromTime": 1585048930082,
+              "toTime": 1585047850082,
+              "sourceOID": 1,
+              "stayTimes": "08:40-09:00"
+            }
+          },
+          {
+
+            "type": "Feature",
+            "id": 7036,
+            "geometry":
+            {
+              "type": "Point",
+              "coordinates": [
+                76.6407304, 12.3235299
+              ]
+            },
+            "properties": {
+              "OBJECTID": 7036,
+              "Name": "",
+              "Place": "School building",
+              "Comments": "",
+              "POINT_X": null,
+              "POINT_Y": null,
+              "fromTime": 1585048930082,
+              "toTime": 1585047850082,
+              "sourceOID": 1,
+              "stayTimes": "08:40-09:00"
+            }
+          }
+        ]
+      }
       const myData = await queryDB();
 
       const sickPeopleIntersected: any = getIntersectingSickRecords(

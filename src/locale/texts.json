@@ -214,11 +214,11 @@
         "am": "አማ"
       },
       "long": {
-        "he": "עברית",
+        "he": "हिन्दी",
         "en": "English",
-        "ru": "Русский",
-        "ar": "عربيه",
-        "am": "አማርኛ"
+        "ru": "ಕನ್ನಡ",
+        "ar": "मराठी",
+        "am": "తెలుగు"
       }
     },
     "forceUpdate": {
@@ -232,7 +232,7 @@
     },
     "welcome": {
       "title": "We’re glad you’ve joined the effort!",
-      "subTitle1": "Thousands of Israelis could suffer the ill effects of the coronavirus.",
+      "subTitle1": "Thousands of Indian could suffer the ill effects of the coronavirus.",
       "subTitle2": "Timely diagnosis and isolation can save their lives."
     },
     "location": {
@@ -277,7 +277,7 @@
       "reportedAt": "Reported At:",
       "inDate": "In",
       "fromHour": "From:",
-      "toHour": "Until:",
+      "toHour": "To:",
       "whereYouThere": "Where you around in this time?",
       "no": "No",
       "canContinue": "You can proceed",

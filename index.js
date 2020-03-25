@@ -11,7 +11,7 @@ import { onError } from './src/services/ErrorService';
 
 BackgroundGeolocation.onLocation(
   async (location) => {
-    location.timestamp = moment(location.timestamp).valueOf();
+    location.timestamp = moment(location.timestamp).valueOf();    
     await insertDB(location);
   }, (error) => {
     onError({ error });

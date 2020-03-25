@@ -46,7 +46,7 @@ const NoExposures = (
       <Text style={[styles.text, { lineHeight: 22 }]}>{recommendation}</Text>
 
       <TouchableOpacity onPress={() => toggleWebview(true, USAGE_PRIVACY)}>
-        <Text style={{ fontSize: 14 }}>{additionalInfo}</Text>
+        <Text style={{ fontSize: 14 }}></Text>
         <View style={styles.bottomBorder} />
       </TouchableOpacity>
     </FadeInView>

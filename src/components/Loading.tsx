@@ -170,7 +170,7 @@ const Loading = (
         <Loader isVisible={showLoader} />
         <ChangeLanguage isVisible={showChangeLanguage} />
         <GeneralWebview isVisible={showWebview} locale={locale} closeWebview={() => toggleWebview(false, '')} usageType={usageType} />
-        <ForceUpdate isVisible={showForceUpdate} strings={strings} />
+        {/* <ForceUpdate isVisible={showForceUpdate} strings={strings} /> */}
         <ForceTerms isVisible={showForceTerms} isRTL={isRTL} strings={strings} onSeeTerms={onSeeTerms} onApprovedTerms={onApprovedTerms} />
       </View>
     )

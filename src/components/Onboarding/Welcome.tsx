@@ -19,7 +19,9 @@ const Welcome = ({ navigation, strings: { general: { start }, welcome: { title, 
       <OnboardingHeader hideLogo />
 
       <View style={{ alignItems: 'center', paddingHorizontal: 40 }}>
-        <Icon source={require('../../assets/onboarding/israeliMinistryOfHealthLogo.png')} width={134} height={80} customStyles={{ marginBottom: 25 }} />
+        <View style={{ flexDirection: 'row'}}>
+        <Icon source={require('../../assets/onboarding/indiaMinistryOfHealthLogo.png')} width={180} height={100} customStyles={{ marginBottom: 25 }} />
+        </View>
         <Text style={styles.title} bold>{title}</Text>
         <Text style={styles.subTitle}>{subTitle1}</Text>
         <Text bold>{subTitle2}</Text>

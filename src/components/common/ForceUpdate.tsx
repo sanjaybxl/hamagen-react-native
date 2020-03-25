@@ -10,7 +10,7 @@ interface Props {
 
 const ForceUpdate = ({ isVisible, strings: { forceUpdate: { title, desc } } }: Props) => {
   const appStoreUrl = 'https://itunes.apple.com/us/app/id1503224314?ls=1&mt=8';
-  const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.hamagen';
+  const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.ino.covid';
 
   return (
     <Modal

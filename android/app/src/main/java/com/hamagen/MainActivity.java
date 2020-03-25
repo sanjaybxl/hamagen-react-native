@@ -1,4 +1,4 @@
-package com.hamagen;
+package com.ino.covid;
 
 import android.os.Bundle;
 

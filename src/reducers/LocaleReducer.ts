@@ -14,7 +14,7 @@ const INITIAL_STATE = {
   showChangeLanguage: false,
   strings: {},
   isRTL: false,
-  locale: undefined,
+  locale: 'en',
   localeData: LocaleData
 };
 
