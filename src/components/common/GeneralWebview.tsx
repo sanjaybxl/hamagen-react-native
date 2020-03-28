@@ -2,32 +2,20 @@ import React from 'react';
 import { View, StyleSheet, Modal, ImageBackground } from 'react-native';
 import WebView from 'react-native-webview';
 import { TouchableOpacity, Icon } from '.';
-import {PADDING_TOP, SCREEN_HEIGHT, SCREEN_WIDTH, USAGE_PRIVACY} from '../../constants/Constants';
+import config from '../../config/config';
+import { IS_SMALL_SCREEN, PADDING_TOP, SCREEN_HEIGHT, SCREEN_WIDTH, USAGE_PRIVACY, SELF_ASSESSMENT } from '../../constants/Constants';
 
 interface Props {
   isVisible: boolean,
-  locale: 'he'|'en'|'ar'|'am'|'ru',
-  usageType: string
+  locale: 'he' | 'en' | 'ar' | 'am' | 'ru',
+  usageType: string,
   closeWebview(): void
 }
 
 const GeneralWebview = ({ isVisible, locale, closeWebview, usageType }: Props) => {
-
-  const usageSourceOnBoarding = {
-    he: { uri: 'https://go.gov.il/magen-terms-he' },
-    en: { uri: 'https://go.gov.il/magen-terms-en' },
-    ar: { uri: 'https://go.gov.il/magen-terms-ar ' },
-    ru: { uri: 'https://go.gov.il/magen-terms-ru' },
-    am: { uri: 'https://go.gov.il/magen-terms-am' }
-  };
-
-  const usageSourcePrivacy = {
-    he: { uri: 'https://go.gov.il/HAMAGEN' },
-    en: { uri: 'https://go.gov.il/HAMAGEN-EN' },
-    ar: { uri: 'https://go.gov.il/HAMAGEN-AR' },
-    ru: { uri: 'https://go.gov.il/HAMAGEN-RU' },
-    am: { uri: 'https://go.gov.il/HAMAGEN-AM' }
-  };
+  const usageSourceOnBoarding = config().usageTerms;
+  const usageSourcePrivacy = config().privacyTerms;
+  const selfAssessment = config().selfAssessment;
 
   return (
     <Modal
@@ -37,22 +25,19 @@ const GeneralWebview = ({ isVisible, locale, closeWebview, usageType }: Props) =
       onRequestClose={closeWebview}
     >
       <View style={styles.container}>
-        <ImageBackground
-          source={require('../../assets/main/headerBG.png')}
-          style={styles.headerContainer}
-          resizeMode="cover"
-          resizeMethod="resize"
-        >
+        <View style={styles.headerSubContainer}>
           <TouchableOpacity style={styles.close} onPress={closeWebview}>
-            <Icon source={require('../../assets/onboarding/close.png')} width={31} />
+            <Icon source={require('../../assets/onboarding/close.png')} width={IS_SMALL_SCREEN ? 20 : 31} />
           </TouchableOpacity>
-
-          <View style={styles.headerSubContainer} />
-        </ImageBackground>
+        </View>
 
         <WebView
           style={{ flex: 1 }}
-          source={usageType === USAGE_PRIVACY ? usageSourcePrivacy[locale] : usageSourceOnBoarding[locale]}
+          source={{
+            uri: usageType === USAGE_PRIVACY ? usageSourcePrivacy[locale] :
+              usageType === SELF_ASSESSMENT ? selfAssessment["en"] :
+                usageSourceOnBoarding[locale]
+          }}
           startInLoadingState
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
@@ -71,8 +56,8 @@ const styles = StyleSheet.create({
   },
   close: {
     position: 'absolute',
-    top: PADDING_TOP(20),
-    left: 20,
+    top: PADDING_TOP(IS_SMALL_SCREEN ? 10 : 20),
+    left: IS_SMALL_SCREEN ? 10 : 20,
     zIndex: 1000
   },
   headerContainer: {
@@ -84,7 +69,7 @@ const styles = StyleSheet.create({
   },
   headerSubContainer: {
     width: SCREEN_WIDTH,
-    height: 40,
+    height: 60,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

@@ -16,6 +16,7 @@ export const SCREEN_HEIGHT: number = Platform.OS === 'ios' ? Dimensions.get('win
 export const SCREEN_WIDTH: number = Dimensions.get('window').width;
 export const PADDING_TOP = (padBy: number): number => padBy + (IS_IOS ? (IS_IPHONE_X ? 32 : 20) : 0);
 export const PADDING_BOTTOM = (padBy: number): number => padBy + (IS_IPHONE_X ? 15 : 0);
+export const IS_SMALL_SCREEN: boolean = SCREEN_HEIGHT < 600;
 
 // Colors
 export const MAIN_COLOR = '#0077c8';
@@ -47,3 +48,4 @@ export const LAST_POINT_START_TIME = 'LAST_POINT_START_TIME';
 // GeneralWebview
 export const USAGE_ON_BOARDING = 'USAGE_ON_BOARDING';
 export const USAGE_PRIVACY = 'USAGE_PRIVACY';
+export const SELF_ASSESSMENT = 'SELF_ASSESSMENT';

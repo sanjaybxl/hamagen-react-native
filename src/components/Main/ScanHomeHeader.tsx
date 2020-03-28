@@ -1,17 +1,26 @@
 import React from 'react';
 import { View, StyleSheet, ImageBackground } from 'react-native';
 import { TouchableOpacity, Text, Icon, ChangeLanguageButton } from '../common';
-import { BASIC_SHADOW_STYLES, MAIN_COLOR, PADDING_TOP, SCREEN_HEIGHT, SCREEN_WIDTH } from '../../constants/Constants';
+import {
+  BASIC_SHADOW_STYLES,
+  IS_SMALL_SCREEN,
+  MAIN_COLOR,
+  PADDING_TOP,
+  SCREEN_HEIGHT,
+  SCREEN_WIDTH
+} from '../../constants/Constants';
 
 interface Props {
   isRTL: boolean,
   strings: any,
   isConnected: boolean,
   showChangeLanguage: boolean,
-  goToExposureHistory(): void
+  goToExposureHistory(): void,
+  goToSelfAssessementPage(): void
 }
 
-const ScanHomeHeader = ({ isRTL, strings: { scanHome: { noData, hasData, exposureHistory } }, isConnected, showChangeLanguage, goToExposureHistory }: Props) => {
+const ScanHomeHeader = ({ isRTL, strings: { scanHome: { noData, hasData, exposureHistory } }, isConnected,
+  showChangeLanguage, goToExposureHistory, goToSelfAssessementPage }: Props) => {
   return (
     <ImageBackground
       source={require('../../assets/main/headerBG.png')}
@@ -21,14 +30,14 @@ const ScanHomeHeader = ({ isRTL, strings: { scanHome: { noData, hasData, exposur
     >
       {
         showChangeLanguage && (
-          <View style={{ position: 'absolute', left: 20, top: PADDING_TOP(20) }}>
+          <View style={{ position: 'absolute', left: 20, top: PADDING_TOP(IS_SMALL_SCREEN ? 15 : 20) }}>
             <ChangeLanguageButton />
           </View>
         )
       }
 
       <View style={{ flex: 1, justifyContent: 'center' }}>
-        <Icon source={require('../../assets/onboarding/indiaMinistryOfHealthLogo.png')} width={80} height={40} />
+        <Icon source={require('../../assets/onboarding/indiaMinistryOfHealthLogo.png')} width={80} height={60} />
       </View>
 
       <View style={styles.subContainer}>
@@ -39,19 +48,21 @@ const ScanHomeHeader = ({ isRTL, strings: { scanHome: { noData, hasData, exposur
           </View>
         </TouchableOpacity>
 
-        <View style={[styles.headerItemContainer, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
-          <View style={[styles.indicator, { backgroundColor: isConnected ? MAIN_COLOR : '#b4b4b4' }]} />
-          <Text style={styles.text}>{isConnected ? hasData : noData}</Text>
-        </View>
+        <TouchableOpacity onPress={goToSelfAssessementPage}>
+          <View style={[styles.headerItemContainer, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+            <Icon source={require('../../assets/main/selfasses.png')} width={25} height={25} />
+            <Text style={styles.text}>Self Assessment</Text>
+          </View>
+        </TouchableOpacity>
       </View>
-    </ImageBackground>
+    </ImageBackground >
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT * 0.17,
+    height: SCREEN_HEIGHT * (IS_SMALL_SCREEN ? 0.20 : 0.17),
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingTop: PADDING_TOP(0)
@@ -62,7 +73,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 15,
     paddingHorizontal: 20,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
@@ -79,7 +89,8 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 12,
-    paddingHorizontal: 5
+    paddingHorizontal: 5,
+    maxWidth: SCREEN_WIDTH / 2.5
   }
 });
 
